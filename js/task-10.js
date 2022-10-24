@@ -18,31 +18,3 @@ let totalInputNumber = 0
 function onInputNumber (event) {
   totalInputNumber = event.currentTarget.value;
 }
-
-function createBoxes (amount) {
-  amount = totalInputNumber;
-  console.log(amount);
-
-  for (let i = 1; i <= amount; i += 1) {
-    let total = 0;
-    if (!boxEl.firstChild) {
-      total = 0;
-      console.log('first');
-    }
-    else {
-      total += i * 10;
-      console.log('next');
-    }
-
-    const markup = document.querySelector('div')
-
-    markup.style.backgroundColor = getRandomHexColor();
-    markup.style.width = `${30+(i-1)*10}px`;
-    markup.style.height = `${30+(i-1)*10}px`;
-    boxEl.append(markup);
-  }
-}
-
-function destroyBoxes() {
-  boxEl.querySelectorAll('div').forEach(element =>element.remove())
-}
